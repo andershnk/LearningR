@@ -1,0 +1,30 @@
+---
+title: "Reproducible Document"
+author: "Anders Hammer Nielsen-Kudsk"
+format: html
+---
+
+```{r setup}
+library(tidyverse)
+
+```
+
+## About me
+- Anders Hammer Nielsen-Kudsk
+- Steno Diabetes Center Aarhus
+- Institut for Klinisk Medicin, Aarhus Universitet
+
+I am a PhD student at **Steno** *Diabetes* Center Aarhus. I was enrolled 1 December 2025.
+
+## Simple code
+```{r}
+3 * 3
+```
+
+
+## Writing R code
+
+```{r}
+2 + 2
+```
+
