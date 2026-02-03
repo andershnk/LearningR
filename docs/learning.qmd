@@ -16,6 +16,9 @@ library(tidyverse)
 
 I am a PhD student at **Steno** *Diabetes* Center Aarhus. I was enrolled 1 December 2025.
 
+## Testing for Git
+The sun is hitting my face and there are no curtains
+
 ## Simple code
 ```{r}
 3 * 3
