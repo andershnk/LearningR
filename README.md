@@ -4,6 +4,8 @@ Anders Hammer Nielsen-Kudsk learning R
 
 # LearningR:
 
+This is for testing pushing to GitHub.
+
 TODO: Give a brief description of what your project is about
 
 This project...
