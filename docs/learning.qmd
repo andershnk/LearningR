@@ -3,7 +3,7 @@ title: "Reproducible Document"
 author: "Anders Hammer Nielsen-Kudsk"
 format: html
 ---
-
+    
 ```{r setup}
 #| message: false
 #| warning: false
@@ -45,7 +45,7 @@ glimpse(post_meal_data)
 ```{r}
 #| fig-cap: "Distribution of BMI"
 #| label: fig-bmi-histo
-ggplot(post_meal_data, aes(x=BMI)) +
+ggplot(post_meal_data, aes(x = BMI)) +
   geom_histogram()
 ```
 
@@ -65,7 +65,7 @@ See @fig-glykemi-bar above for a cool plot!
 ## Plotting two discrete variables
 
 ```{r}
-ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi)))+
+ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi))) +
   geom_bar(position = position_dodge())
 ```
 
@@ -73,14 +73,22 @@ ggplot(post_meal_data, aes(x = Group, fill = as.character(glykemi)))+
 
 ```{r fig-bmi-glycemia}
 #| fig-cap: "BMI and glycemia, side by side"
-#| fig-subcap: 
+#| fig-subcap:
 #|  - "Distribution of BMI."
 #|  - "Number of those with glycemia"
 #| layout-ncol: 2
 ggplot(post_meal_data, aes(x = BMI)) +
-         geom_histogram()
+  geom_histogram()
 ggplot(post_meal_data, aes(x = glykemi)) +
   geom_bar()
 ```
 
 
+## Plotting two continuous variables
+```{r}
+#| fig-cap: "Scatterplot of BMI and the area under the curve for glucose"
+#| label: fig-bmi-auc-pg
+ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
+  geom_point() +
+  geom_smooth()
+```
