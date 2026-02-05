@@ -210,6 +210,31 @@ post_meal_data |>
     percent_body_fat = (Fat.mass.DXA / Weight) * 100
   ) |>
   filter(percent_body_fat > 30)
+if_else
 
 # 10 individuals.
+```
+
+## Visualizing with a jitter plot
+
+```{r}
+tidied_post_meal_data %>%
+  mutate(overweight = if_else(BMI >= 25, "overweight", "not overweight")) %>%
+  ggplot(aes(x = overweight, y = insulin_glucose_ratio)) +
+  geom_jitter(width = 0.15)
+```
+
+## Plotting three or more variables
+
+```{r}
+tidied_post_meal_data %>%
+  filter(BMI < 30) %>%
+  mutate(young = if_else(Age < 40, "Young", "Old")) %>%
+  ggplot(aes(x = BMI, y = insulin_glucose_ratio, colour = Group)) +
+  geom_point() +
+  facet_grid(cols = vars(young)) +
+  labs(
+    x = "Body mass index (BMI)",
+    y = "Insulin to glucose ratio"
+  )
 ```
